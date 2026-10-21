@@ -1,0 +1,19 @@
+# Controlled-access inputs, derived outputs, and local credentials
+data/
+private/
+outputs/
+*.vcf
+*.vcf.gz
+*.bcf
+*.bam
+*.cram
+*.fastq
+*.fastq.gz
+*.csv
+*.tbi
+*.csi
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store

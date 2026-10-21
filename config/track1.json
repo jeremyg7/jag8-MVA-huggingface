@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "storage": {
+    "volume_root": "/path/to/volume",
+    "project_root": "/path/to/volume/MVA",
+    "reference_root": "/path/to/volume/MVA/reference",
+    "private_run_root": "/path/to/volume/MVA/private/track1",
+    "reference_tmp": "/path/to/volume/MVA/reference/tmp",
+    "run_tmp": "/path/to/volume/MVA/private/track1/tmp",
+    "docker_disk_root": "/path/to/volume/MVA/reference/containers/docker-desktop",
+    "minimum_setup_free_gib": 220,
+    "minimum_run_free_gib": 30
+  },
+  "inputs": {
+    "vcf": "data/hackathon.vcf.gz",
+    "vcf_index": "data/hackathon.vcf.gz.tbi",
+    "phenotype_docx": "data/Challenge_Clinical_Phenotype_1.docx",
+    "expected_hpo_terms": 8,
+    "expected_samples": 1,
+    "assembly": "GRCh38",
+    "contig_style": "unprefixed"
+  },
+  "references": {
+    "lightweight_annotation": {
+      "release": "Ensembl-116-GRCh38",
+      "directory": "annotation/ensembl-116-grch38",
+      "files": [
+        {
+          "name": "Homo_sapiens.GRCh38.116.gff3.gz",
+          "url": "https://ftp.ensembl.org/pub/release-116/gff3/homo_sapiens/Homo_sapiens.GRCh38.116.gff3.gz",
+          "expected_bytes": 108378077,
+          "checksum_manifest": "CHECKSUMS"
+        },
+        {
+          "name": "CHECKSUMS",
+          "url": "https://ftp.ensembl.org/pub/release-116/gff3/homo_sapiens/CHECKSUMS",
+          "expected_bytes": 1638
+        }
+      ]
+    },
+    "genome": {
+      "release": "Broad-GATK-assembly38",
+      "directory": "genome/grch38-broad",
+      "files": [
+        {
+          "name": "Homo_sapiens_assembly38.fasta.gz",
+          "url": "https://github.com/broadinstitute/gatk/raw/refs/heads/master/src/test/resources/large/Homo_sapiens_assembly38.fasta.gz",
+          "expected_bytes": 896887306,
+          "sha256": "3669c0260dbc1b6ed06bfa871cea5a962089f7781f21ce5b97115c37ad1ff50d"
+        },
+        {
+          "name": "Homo_sapiens_assembly38.fasta.gz.fai",
+          "url": "https://github.com/broadinstitute/gatk/raw/refs/heads/master/src/test/resources/large/Homo_sapiens_assembly38.fasta.gz.fai",
+          "expected_bytes": 160928,
+          "sha256": "edefd93c489dc1baefad312f40388089f8db5cf6dcc3ba0955669ead274e8b6b"
+        },
+        {
+          "name": "Homo_sapiens_assembly38.fasta.gz.gzi",
+          "url": "https://github.com/broadinstitute/gatk/raw/refs/heads/master/src/test/resources/large/Homo_sapiens_assembly38.fasta.gz.gzi"
+        }
+      ]
+    },
+    "exomiser": {
+      "release": "2602",
+      "directory": "exomiser/2602",
+      "archives": [
+        {
+          "name": "2602_hg38.zip",
+          "url": "https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2602_hg38.zip",
+          "expected_bytes": 23576028714,
+          "required_directory": "2602_hg38"
+        },
+        {
+          "name": "2602_phenotype.zip",
+          "url": "https://g-879a9f.f5dc97.75bc.dn.glob.us/data/2602_phenotype.zip",
+          "expected_bytes": 13478530504,
+          "required_directory": "2602_phenotype"
+        }
+      ],
+      "required_directories": ["2602_hg38", "2602_phenotype"]
+    },
+    "vep": {
+      "release": "116",
+      "directory": "vep/116",
+      "archives": [
+        {
+          "name": "homo_sapiens_vep_116_GRCh38.tar.gz",
+          "url": "https://ftp.ensembl.org/pub/release-116/variation/indexed_vep_cache/homo_sapiens_vep_116_GRCh38.tar.gz",
+          "expected_bytes": 27644657162,
+          "required_directory": "homo_sapiens/116_GRCh38"
+        }
+      ],
+      "required_directories": ["homo_sapiens/116_GRCh38"]
+    }
+  },
+  "containers": {
+    "exomiser": "exomiser/exomiser-cli:15.1.0",
+    "vep": "ensemblorg/ensembl-vep:release_116.1"
+  },
+  "thresholds": {
+    "minimum_dp": 10,
+    "minimum_gq": 20,
+    "compound_het_max_af": 0.01,
+    "single_or_hom_max_af": 0.001,
+    "exomiser_reconcile_top": 20,
+    "exomiser_output_genes": 100,
+    "frozen_shortlist": 10
+  },
+  "lightweight": {
+    "panel": "config/disease-panels/mva.yml",
+    "interval_padding_bp": 2000,
+    "max_submission_rows": 10,
+    "minimum_setup_free_gib": 2,
+    "minimum_run_free_gib": 2
+  },
+  "unbiased": {
+    "target_gene_prior": null,
+    "gene_panel": null,
+    "added_hpo_terms": [],
+    "analysis_mode": "PASS_ONLY"
+  }
+}

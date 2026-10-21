@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "panel_id": "mva-established-and-like-2026-08",
+  "disease": "Mosaic variegated aneuploidy and related constitutional aneuploidy syndromes",
+  "assembly": "GRCh38",
+  "interval_padding_bp": 2000,
+  "genes": [
+    {
+      "symbol": "BUB1B",
+      "aliases": ["BUBR1"],
+      "tier": "canonical_mva",
+      "inheritance": ["AR"],
+      "relationship": "MVA1",
+      "citations": ["Hanks et al., Nat Genet 2004; PMID 15475955; DOI 10.1038/ng1449"]
+    },
+    {
+      "symbol": "CEP57",
+      "aliases": [],
+      "tier": "canonical_mva",
+      "inheritance": ["AR"],
+      "relationship": "MVA2",
+      "citations": ["Snape et al., Nat Genet 2011; PMID 21552266"]
+    },
+    {
+      "symbol": "TRIP13",
+      "aliases": [],
+      "tier": "canonical_mva",
+      "inheritance": ["AR"],
+      "relationship": "MVA3",
+      "citations": ["Yost et al., Nat Genet 2017; PMID 28553959; DOI 10.1038/ng.3883"]
+    },
+    {
+      "symbol": "CENATAC",
+      "aliases": ["CCDC84"],
+      "tier": "canonical_mva",
+      "inheritance": ["AR"],
+      "relationship": "MVA4",
+      "citations": ["de Wolf et al., EMBO J 2021; PMID 34009673; DOI 10.15252/embj.2020106536"]
+    },
+    {
+      "symbol": "SLF2",
+      "aliases": [],
+      "tier": "mva5_mva6",
+      "inheritance": ["AR"],
+      "relationship": "MVA5 / segmented chromosomes",
+      "citations": ["Grange et al., Nat Commun 2022; PMID 36333305; DOI 10.1038/s41467-022-34349-8"]
+    },
+    {
+      "symbol": "SMC5",
+      "aliases": [],
+      "tier": "mva5_mva6",
+      "inheritance": ["AR"],
+      "relationship": "MVA6 / near-tetraploidy",
+      "citations": ["Grange et al., Nat Commun 2022; PMID 36333305; DOI 10.1038/s41467-022-34349-8"]
+    },
+    {
+      "symbol": "BUB1",
+      "aliases": [],
+      "tier": "mva_like",
+      "inheritance": ["AR"],
+      "relationship": "MVA-like mitotic segregation disorder",
+      "citations": ["Carvalhal et al., Sci Adv 2022; PMID 35044816; DOI 10.1126/sciadv.abk0114"]
+    },
+    {
+      "symbol": "MAD1L1",
+      "aliases": [],
+      "tier": "mva_like",
+      "inheritance": ["AR"],
+      "relationship": "MVA-like mosaic aneuploidy",
+      "citations": ["Villarroya-Beltri et al., Sci Adv 2022; PMID 36322655; DOI 10.1126/sciadv.abq5914"]
+    },
+    {
+      "symbol": "MAD2L1BP",
+      "aliases": ["C14orf106", "p31comet"],
+      "tier": "mva_like",
+      "inheritance": ["AR"],
+      "relationship": "MVA-like mosaic aneuploidy",
+      "citations": ["Abdel-Salam et al., JCI Insight 2023; PMID 37796616; DOI 10.1172/jci.insight.170079"]
+    },
+    {
+      "symbol": "CEP192",
+      "aliases": [],
+      "tier": "mva_like",
+      "inheritance": ["AR"],
+      "relationship": "MVA-like tetraploidy",
+      "citations": ["Guo et al., HGG Adv 2024; PMID 37981762; DOI 10.1016/j.xhgg.2023.100256"]
+    },
+    {
+      "symbol": "CDC20",
+      "aliases": [],
+      "tier": "mva_like",
+      "inheritance": ["AD"],
+      "relationship": "dominant chromosome-instability syndrome",
+      "citations": ["Fujita et al., Aging Cell 2020; PMID 33094908; PMC 7681047"]
+    }
+  ]
+}
